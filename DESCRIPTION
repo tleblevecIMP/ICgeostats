@@ -1,9 +1,13 @@
 Package: ICgeostats
-Type: Package
-Title: What the Package Does (Title Case)
+Type: R Package
+Title: Basic geostatistics
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Thomas Le Blevec
+Maintainer: t.le-blevec15@imperial.ac.uk
+Description: requires the packages RGeostats http://rgeostats.free.fr/
+Rcpp and tcltk2. 
+Gaussian simulations with interactive window 
+TGS PGS with interactive window
+STOOIP calculation with Monte Carlo
+License: open source 
 LazyData: TRUE
