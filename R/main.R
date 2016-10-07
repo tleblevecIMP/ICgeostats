@@ -7,8 +7,9 @@ sum_dice(6,10000)
 sum_dice(100,10000)
 product_dice(1,10000)
 product_dice(2,10000)
-product_dice(100,10000)
-product_dice_log(100,10000)
+h<-product_dice(100,10000)
+hist(h,freq=FALSE)
+hist(log(h),freq = FALSE) # if we take the log we have a normal distribution, which means it is lognormal
 
 # variance
 zi = c(13,17,15,23,27,26,18,27,20,24)
@@ -31,9 +32,10 @@ quantile(st,0.9) # p10: best case
 poro<-c(8,21,12,12,10,16,23,5,19,15,11,14,10,6,17,9,16,15,15,20)
 perm<-c(33,250,29,32,15,120,412,8,230,83,54,63,18,13,129,37,350,36,95,512)
 plot(poro,perm)
-plot(poro,log(perm))
 cov(poro,perm)/sqrt(var(perm)*var(poro))
+plot(poro,log(perm))
 rho=cov(poro,log(perm))/sqrt(var(log(perm))*var(poro))
+print(rho)
 # permeability as Y
 b1=rho*sd(log(perm))/sd(poro)
 a1= mean(log(perm))-b1*mean(poro)

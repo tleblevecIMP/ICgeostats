@@ -11,4 +11,5 @@ product_dice<-function(n_dice,n_trials){
     monte_carlo[i] = prod(realization)
   }
   hist(monte_carlo,freq=FALSE)
+  return(monte_carlo)
 }

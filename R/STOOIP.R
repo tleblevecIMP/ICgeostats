@@ -3,7 +3,7 @@
 library(mc2d)
 
 STOOIP<-function(n_trials){
-  # log normal distribution for the GRV
+  # log normal distribution for the GRV -> high uncertainty, asymmetric on the reservoir top level
   # transformation from non log to log moments
   m = 10
   v =25
@@ -11,9 +11,9 @@ STOOIP<-function(n_trials){
   sdlog = sqrt(log(1+v/(m^2)))
   GRV=rlnorm(n_trials,meanlog=meanlog,sdlog=sdlog)
   # Triangular distribution for the N/G
-  NG=rtriang(n_trials,min=0.4,mode=0.7,max=0.8)
+  NG=rtriang(n_trials,min=0.4,mode=0.7,max=0.8) # to define with the geologist
   # normal distribution for the porosity
-  Phi=rnorm(n_trials,mean=0.25,sd=0.02)
+  Phi=rnorm(n_trials,mean=0.25,sd=0.02) # central limit theorem, arithmetic mean
   # log normal distribution for the So
   So=rtriang(n_trials, min = 0.3, mode=0.75, max=0.85)
 
