@@ -11,5 +11,5 @@ sum_dice<-function(n_dice,n_trials){
     realization = sample(x=dice,size=n_dice,replace=TRUE)
     monte_carlo[i] = sum(realization)
   }
-  hist(monte_carlo,freq=FALSE)
+  hist(monte_carlo)
 }
