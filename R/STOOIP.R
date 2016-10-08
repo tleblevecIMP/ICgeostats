@@ -18,6 +18,6 @@ STOOIP<-function(n_trials){
   So=rtriang(n_trials, min = 0.3, mode=0.75, max=0.85)
 
   STOOIP = GRV*NG*Phi*So*0.75
-  hist(STOOIP,breaks=100,freq=FALSE,xlim=c(0,10))
+  hist(STOOIP,breaks=100,xlim=c(0,10))
   return(STOOIP)
   }
