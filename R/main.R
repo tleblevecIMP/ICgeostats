@@ -33,7 +33,7 @@ poro<-c(8,21,12,12,10,16,23,5,19,15,11,14,10,6,17,9,16,15,15,20)
 perm<-c(33,250,29,32,15,120,412,8,230,83,54,63,18,13,129,37,350,36,95,512)
 plot(poro,perm)
 cov(poro,perm)/sqrt(var(perm)*var(poro))
-plot(poro,log(perm))
+plot(poro,log(perm),xlab="porosity")
 rho=cov(poro,log(perm))/sqrt(var(log(perm))*var(poro))
 print(rho)
 # permeability as Y
