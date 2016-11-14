@@ -147,15 +147,15 @@ PGS_vario<-function(){
 
     if(identical(methodChoice, "TGS")){
       grid<-simtub(dbout=grid,model=model,seed=seed,nbsimu=1,nbtuba = 1000)
-      facies[grid[,4]<0]<-1
-      facies[(grid[,4]>0)&(grid[,4]<qnorm(0.75))]<-2
+      facies[grid[,4]<qnorm(1/3.)]<-1
+      facies[(grid[,4]>qnorm(1/3.))&(grid[,4]<qnorm(2/3.))]<-2
 
     }
     if(identical(methodChoice, "PGS")){
       grid<-simtub(dbout=grid,model=model,seed=seed,nbsimu=1,nbtuba = 1000)
-      grid<-simtub(dbout=grid,model=model2,seed=seed,nbsimu=1,nbtuba = 1000)
-      facies[grid[,4]<0]<-1
-      facies[(grid[,4]>0)&(grid[,5]>0)]<-2
+      grid<-simtub(dbout=grid,model=model2,seed=seed+1,nbsimu=1,nbtuba = 1000)
+      facies[grid[,4]<qnorm(1/3.)]<-1
+      facies[(grid[,4]>qnorm(1/3.))&(grid[,5]>0)]<-2
     }
 
     grid<-db.add(grid,facies)

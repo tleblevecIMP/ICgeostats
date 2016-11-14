@@ -115,6 +115,11 @@ simulate_from_vario<-function(){
     grid<-db.create(flag.grid=TRUE,x0=c(0,0),nx=c(100,100),dx=c(0.01,0.01))
     grid<-simtub(dbout=grid,model=model,seed=seed,nbsimu=1,nbtuba = 1000)
     plot(grid)
+    lag<-(1:40)/10.
+    windows()
+    expvario<-vario.grid(grid,nlag = 30)
+    plot(expvario)
+    print(expvario)
   }
 
   tkgrid(win1$env$labelnugget, padx = 0.1, pady = c(10, 5))
