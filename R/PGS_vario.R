@@ -1,5 +1,3 @@
-# simulate a facies model based on PGS algorithm
-
 library(RGeostats)
 library(tcltk2)
 
@@ -29,14 +27,11 @@ PGS_vario<-function(){
   tkgrid(win1$env$method, padx = 10, pady = c(5, 10))
 
   win1$env$model1 <- tk2listbox(win1, height = 4, selectmode = "single")
-  tkgrid(tk2label(win1, text = "What type of model for Y1 ?", justify = "left"),
-         padx = 10, pady =c(15, 5), sticky = "w")
-  tkgrid(win1$env$model1, padx = 10, pady = c(5, 10))
-
   win1$env$model2 <- tk2listbox(win1, height = 4, selectmode = "single")
-  tkgrid(tk2label(win1, text = "What type of model for Y2 ?", justify = "left"),
+  tkgrid(tk2label(win1, text = "What type of model for Y1 ?", justify = "left"),
+		tk2label(win1, text = "What type of model for Y2 ?", justify = "right"),
          padx = 10, pady =c(15, 5), sticky = "w")
-  tkgrid(win1$env$model2, padx = 10, pady = c(5, 10))
+  tkgrid(win1$env$model1,win1$env$model2, padx = 10, pady = c(5, 10))
 
   models <- c("gaussian", "cubic","exponential","spherical")
   for (model in models){
