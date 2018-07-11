@@ -1,5 +1,6 @@
 # ICgeostats
 Exercise material for the geostatistical course at Imperial College given for master students. 
+For using this code, you need first to install the package RGeostats at http://rgeostats.free.fr/
 
 The course created by Olivier Dubrule reviews geostatistical technics for the oil industry. 
 It also gives the fundamentals of statistics and probabilities by studying continuous and discrete random variables. 
